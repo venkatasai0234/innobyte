@@ -1,0 +1,16 @@
+
+<svg width="160" height="40" viewBox="0 0 160 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Icon: 4 techy blocks -->
+  <rect x="0" y="10" width="10" height="10" rx="2" fill="#6aa6ff"/>
+  <rect x="20" y="10" width="10" height="10" rx="2" fill="#46e0b1"/>
+  <rect x="0" y="20" width="10" height="10" rx="2" fill="#46e0b1"/>
+  <rect x="20" y="20" width="10" height="10" rx="2" fill="#6aa6ff"/>
+  <!-- Connector (H shape) -->
+  <rect x="10" y="14" width="10" height="2" fill="#a4b5d6"/>
+  <rect x="10" y="24" width="10" height="2" fill="#a4b5d6"/>
+  <rect x="14" y="14" width="2" height="12" fill="#a4b5d6"/>
+  <!-- Text -->
+  <text x="36" y="26" font-family="Segoe UI, sans-serif" font-size="18" font-weight="700" fill="#eaf1ff">
+    InnoByte
+  </text>
+</svg>

@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Products & Services — InnoByte</title>
+  <link rel="icon" type="image/svg+xml" href="logo.svg">
+  <style>
+    :root {
+      --text: #0f172a;
+      --text-strong: #020617;
+      --muted: #475569;
+      --accent: #3b82f6;
+      --accent-2: #22c1a7;
+      --radius: 16px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background:
+        linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)),
+        url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1600&q=80'),
+        url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1600&q=80');
+      background-blend-mode: lighten, overlay, normal;
+      background-size: cover;
+      background-attachment: fixed;
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      animation: bgShift 60s ease-in-out infinite alternate;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    @keyframes bgShift {
+      0% { background-position: center top; }
+      100% { background-position: center bottom; }
+    }
+
+    main.container { flex: 1; max-width: 1100px; margin: 0 auto; padding: 24px; }
+
+    .nav {
+      width: 952px; height: 61px; display: flex; align-items: center;
+      justify-content: space-between; padding: 0 16px; margin: 0 auto;
+      border-bottom: 1px solid #dbe4ef; background: rgba(255,255,255,0.85);
+      backdrop-filter: blur(10px); border-radius: 0 0 14px 14px;
+      box-shadow: 0 2px 14px rgba(0,0,0,0.06);
+    }
+
+    .logo { display: flex; align-items: center; gap: 10px; font-weight: 800; color: var(--text-strong); text-decoration: none; font-size: 22px; }
+    .logo svg { width: 28px; height: 28px; }
+    .links a { color: var(--muted); text-decoration: none; padding: 8px 12px; border-radius: 999px; transition: all 0.2s ease; }
+    .links a:hover, .links a.active { background: linear-gradient(90deg, var(--accent), var(--accent-2)); color: white; }
+
+    .hero { text-align: center; padding: 60px 20px 30px; }
+    .hero h1 { font-size: clamp(2rem, 5vw, 3rem); color: var(--text-strong); margin-bottom: 12px; text-shadow: 0 1px 3px rgba(255,255,255,0.6); }
+    .hero p { font-size: 1.1rem; color: var(--muted); max-width: 700px; margin: auto; }
+
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 28px; padding: 40px 0; }
+    .card { background: rgba(255,255,255,0.6); border: 1px solid rgba(255,255,255,0.35); border-radius: var(--radius); backdrop-filter: blur(10px) saturate(160%); box-shadow: 0 8px 32px rgba(0,0,0,0.15); text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .card:hover { transform: translateY(-6px); box-shadow: 0 12px 36px rgba(0,0,0,0.2); }
+    .card img { width: 100%; height: 180px; object-fit: cover; border-top-left-radius: var(--radius); border-top-right-radius: var(--radius); }
+    .card-content { padding: 18px 20px 28px; }
+    .card h3 { color: var(--text-strong); margin-bottom: 10px; }
+    .card p { color: var(--muted); margin-bottom: 8px; font-size: 0.95rem; }
+    .price { color: var(--accent); font-weight: 700; margin-bottom: 14px; }
+    .learn-more { text-decoration: none; font-weight: 600; color: var(--accent-2); transition: all 0.3s ease; }
+    .learn-more:hover { color: var(--accent); text-decoration: underline; }
+
+    .tracker { text-align: center; background: rgba(255,255,255,0.7); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.4); padding: 80px 20px; border-radius: var(--radius); box-shadow: 0 6px 24px rgba(0,0,0,0.15); margin-top: 60px; }
+    .tracker h2 { font-size: 2rem; color: var(--text-strong); margin-bottom: 10px; }
+    .tracker p { color: var(--muted); font-size: 1.1rem; margin-bottom: 30px; }
+    .tracker-buttons { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+    .tracker-buttons a { text-decoration: none; font-weight: 700; color: #fff; padding: 14px 28px; border-radius: 999px; transition: all 0.3s ease; box-shadow: 0 6px 16px rgba(0,0,0,0.25); }
+    .tracker-buttons a:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(0,0,0,0.3); }
+    .recent-btn { background: linear-gradient(90deg, #22c1a7, #16a34a); }
+    .most-btn { background: linear-gradient(90deg, #ef4444, #dc2626); }
+    footer { margin-top: 60px; padding: 24px; color: var(--muted); font-size: 14px; text-align: center; border-top: 1px solid #e2e8f0; background: rgba(255,255,255,0.85); backdrop-filter: blur(8px); border-radius: 12px; box-shadow: 0 -2px 12px rgba(0,0,0,0.05); }
+  </style>
+</head>
+
+<body>
+  <main class="container">
+    <!-- NAVBAR -->
+    <div class="nav">
+      <a class="logo" href="index.html">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+          <rect x="8" y="8" width="16" height="16" fill="#3b82f6" rx="3"/>
+          <rect x="40" y="8" width="16" height="16" fill="#22c1a7" rx="3"/>
+          <rect x="8" y="40" width="16" height="16" fill="#22c1a7" rx="3"/>
+          <rect x="40" y="40" width="16" height="16" fill="#3b82f6" rx="3"/>
+        </svg>
+        <span>InnoByte</span>
+      </a>
+      <div class="links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a class="active" href="products.html">Products/Services</a>
+        <a href="news.html">News</a>
+        <a href="contact.php">Contacts</a>
+        <a href="login.php">Admin Login</a>
+      </div>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero">
+      <h1>Our Products & Services</h1>
+      <p>Explore cutting-edge IoT, analytics, and software solutions — engineered for innovation and reliability.</p>
+    </section>
+
+    <!-- PRODUCT GRID -->
+    <section class="grid">
+      <div class="card"><img src="https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?auto=format&fit=crop&w=1200&q=80" alt="Smart Water Meter"><div class="card-content"><h3>Smart Water Meter</h3><p>IoT-enabled water usage tracking with real-time analytics.</p><p class="price">From $299</p><a href="products/product1.php" class="learn-more">Learn More →</a></div></div>
+
+
+      <div class="card"><img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=1200&q=80" alt="Cloud Dashboard"><div class="card-content"><h3>Cloud Dashboard</h3><p>Powerful analytics platform for real-time IoT visibility.</p><p class="price">From $899</p><a href="products/product3.php" class="learn-more">Learn More →</a></div></div>
+
+      <div class="card"><img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=80" alt="AI Analytics Suite"><div class="card-content"><h3>AI Analytics Suite</h3><p>Predictive and intelligent data insights powered by AI.</p><p class="price">From $1,299</p><a href="products/product4.php" class="learn-more">Learn More →</a></div></div>
+
+      <div class="card"><img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80" alt="Edge Gateway"><div class="card-content"><h3>Edge Gateway</h3><p>Secure IoT gateway for real-time data aggregation at the edge.</p><p class="price">From $499</p><a href="products/product5.php" class="learn-more">Learn More →</a></div></div>
+
+      <div class="card"><img src="https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?auto=format&fit=crop&w=1200&q=80" alt="Field Service App"><div class="card-content"><h3>Field Service App</h3><p>Mobile platform for technicians to log maintenance and sync data.</p><p class="price">From $199</p><a href="products/product6.php" class="learn-more">Learn More →</a></div></div>
+      <div class="card"><img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80" alt="Energy Monitor"><div class="card-content"><h3>Energy Monitor</h3><p>Smart device tracking energy consumption and optimization.</p><p class="price">From $349</p><a href="products/product8.php" class="learn-more">Learn More →</a></div></div>
+
+      <div class="card"><img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?auto=format&fit=crop&w=1200&q=80" alt="Data API Service"><div class="card-content"><h3>Data API Service</h3><p>RESTful API suite for external integrations and analytics.</p><p class="price">From $599/year</p><a href="products/product9.php" class="learn-more">Learn More →</a></div></div>
+
+      <div class="card"><img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1200&q=80" alt="SLA Support Plan"><div class="card-content"><h3>SLA Support Plan</h3><p>Premium 24/7 support and uptime monitoring with SLA guarantees.</p><p class="price">From $99/month</p><a href="products/product10.php" class="learn-more">Learn More →</a></div></div>
+    </section>
+
+    <!-- TRACKER -->
+    <section class="tracker">
+      <h2>Your Product History</h2>
+      <p>Track your browsing activity and explore your most visited products.</p>
+      <div class="tracker-buttons">
+        <a href="products/recent.php" class="recent-btn">📋 Recently Visited Products</a>
+        <a href="products/most.php" class="most-btn">🏆 Most Visited Products</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>© 2025 InnoByte — Innovative, reliable web software.</footer>
+</body>
+</html>

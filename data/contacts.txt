@@ -1,0 +1,7 @@
+# data/contacts.txt
+# Each line: Name|Role|Email|Phone
+# Lines beginning with # are comments.
+Venkata Siva Sai Krishna Prasad|Founder & CTO|venkatasai0234@gmail.com|+1 408-210-3261
+Jane Doe|Head of Marketing|jane.doe@innobyte.com|+1 555-111-2222
+John Smith|Lead Engineer|john.smith@innobyte.com|+1 555-333-4444
+
